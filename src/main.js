@@ -173,7 +173,9 @@ function goBackToMain(){
   mainPoster.classList.remove('hidden')
   savedPostersArea.classList.add('hidden')
 };
+
 var newPoster = {};
+
 function customPoster(){
   newPoster = new Poster(userPosterImage.value , userPosterTitle.value, userPosterQuote.value)
   images.unshift(newPoster.imageURL)
@@ -187,17 +189,26 @@ function customPoster(){
 };
 var savedPosterInstance = {};
 
-
 function saveThisPoster () {
   savedPosterInstance = new Poster(posterImg.src, posterTitle.innerText, posterQuote.innerText);
-
-  if (savedPosters.some(e => e.imageURL === savedPosterInstance.imageURL )){
-    return savedPosters
-  }else {
-    savedPosters.unshift(savedPosterInstance);
+  var posterExists = 0
+    for (var i = 0; i < savedPosters.length; i++){
+      if (savedPosters.length > 0 && savedPosters[i].imageURL === savedPosterInstance.imageURL && savedPosters[i].title === savedPosterInstance.title && savedPosters[i].quote === savedPosterInstance.quote){
+        posterExists++;
+      }
+    }
+    if (posterExists === 0){
+      savedPosters.unshift(savedPosterInstance);
+      var createArticle = document.createElement('article')
+      //append new HTML article with current poster elements
+      createArticle.innerHTML = `<article class='mini-poster'>
+      <img src=${savedPosterInstance.imageURL} alt="saved poster URL">
+      <h2>${savedPosterInstance.title}</h2>
+      <h4>${savedPosterInstance.quote}</h4>
+      </article>`
+      //append whole HTML section to grid section
+      savedPostersGrid.appendChild(createArticle)
+    };
   };
-};
-
-
 
 getRandomLoad();
