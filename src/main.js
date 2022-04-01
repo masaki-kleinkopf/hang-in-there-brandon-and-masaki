@@ -198,10 +198,10 @@ function saveThisPoster () {
       }
     }
     if (posterExists === 0){
-      savedPosters.unshift(savedPosterInstance);
+      savedPosters.push(savedPosterInstance);
       var createArticle = document.createElement('article')
       //append new HTML article with current poster elements
-      createArticle.innerHTML = `<article class='mini-poster'>
+      createArticle.innerHTML = ` <article class='mini-poster'>
       <img src=${savedPosterInstance.imageURL} alt="saved poster URL">
       <h2>${savedPosterInstance.title}</h2>
       <h4>${savedPosterInstance.quote}</h4>
@@ -212,3 +212,4 @@ function saveThisPoster () {
   };
 
 getRandomLoad();
+  
