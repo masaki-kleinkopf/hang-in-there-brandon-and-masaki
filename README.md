@@ -37,10 +37,3 @@ Project spec & rubric can be found [here](https://frontend.turing.io/projects/mo
 
 
 * [Brandon Ainsworth](https://github.com/BrandonAinsworth/ "Brandon Ainsworth")
-
-
-Deployed link (gh-pages)
-
-Screenshot/gif of your app running
-
-Ideas for future features/fixes
