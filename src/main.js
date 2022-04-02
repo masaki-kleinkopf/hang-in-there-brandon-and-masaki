@@ -17,7 +17,8 @@ var userPosterImage = document.querySelector('#poster-image-url')
 var userPosterTitle = document.querySelector('#poster-title')
 var userPosterQuote = document.querySelector('#poster-quote')
 var savePosterButton = document.querySelector('.save-poster')
-var savedPostersGrid= document.querySelector('.saved-posters-grid')
+var savedPostersGrid = document.querySelector('.saved-posters-grid')
+var miniPoster = document.querySelector('.mini-poster')
 
 
 
@@ -140,6 +141,13 @@ customPoster()
 
 savePosterButton.addEventListener('click', saveThisPoster)
 
+savedPostersArea.addEventListener('dblclick', function(e){
+  var closest = e.target.closest('.mini-poster')
+  closest.classList.add('hidden')
+  }
+)
+
+
 
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
@@ -201,10 +209,12 @@ function saveThisPoster () {
       savedPosters.push(savedPosterInstance);
       var createArticle = document.createElement('article')
       //append new HTML article with current poster elements
-      createArticle.innerHTML = ` <article class='mini-poster'>
-      <img src=${savedPosterInstance.imageURL} alt="saved poster URL">
-      <h2>${savedPosterInstance.title}</h2>
-      <h4>${savedPosterInstance.quote}</h4>
+      createArticle.classList.add()
+      createArticle.innerHTML = `
+      <article class='mini-poster'>
+        <img src=${savedPosterInstance.imageURL} alt="saved poster URL">
+        <h2>${savedPosterInstance.title}</h2>
+        <h4>${savedPosterInstance.quote}</h4>
       </article>`
       //append whole HTML section to grid section
       savedPostersGrid.appendChild(createArticle)
@@ -212,4 +222,3 @@ function saveThisPoster () {
   };
 
 getRandomLoad();
-  
