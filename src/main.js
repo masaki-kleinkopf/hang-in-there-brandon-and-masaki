@@ -118,11 +118,11 @@ var quotes = [
   "A champion is defined not by their wins but by how they can recover when they fall."
 ];
 
-var savedPosters = [];  
-var currentPoster;
+var savedPosters = [];
 var newPoster = {};
 var savedPosterInstance = {};
 var posterExists = 0;
+
 
 // event listeners go here 👇
 showRandomBtn.addEventListener('click', getRandomLoad);
@@ -138,13 +138,9 @@ viewSavePosterBtn.addEventListener('click', goBackViewSaved);
 showPosterButton.addEventListener('click', function(){
 event.preventDefault();
 customPoster();
-checkDuplicate()
 });
 
-savePosterButton.addEventListener('click', function(){
-  saveThisPoster();
-  makeMiniPoster();
-});
+savePosterButton.addEventListener('click', savePosterToArray);
 
 savedPostersArea.addEventListener('dblclick', dblClickToDelete);
 // functions and event handlers go here 👇
@@ -159,14 +155,18 @@ function getRandomLoad(){
   posterQuote.innerText = quotes[getRandomIndex(quotes)];
 };
 
-function makeOwnPosterTakeMeBack(){
-  mainPoster.classList.toggle('hidden');
-  hiddenForm.classList.toggle('hidden');
+function toggleElem (elem1){
+  elem1.classList.toggle('hidden')
 };
 
-function goBackViewSaved (){
-  mainPoster.classList.toggle('hidden');
-  savedPostersArea.classList.toggle('hidden');
+function makeOwnPosterTakeMeBack(){
+  toggleElem(hiddenForm)
+  toggleElem(bigMain)
+};
+
+function goBackViewSaved(){
+  toggleElem(bigMain)
+  toggleElem(savedPostersArea)
 };
 
 function addImgTitleQte(){
@@ -193,18 +193,22 @@ function dblClickToDelete (e){
   closest.classList.add('hidden');
 };
 
-var savedPosterInstance = {};
+
+function savePosterToArray (){
+  saveThisPoster();
+  makeMiniPoster();
+};
 
 function saveThisPoster () {
   savedPosterInstance = new Poster(posterImg.src, posterTitle.innerText, posterQuote.innerText);
     for (var i = 0; i < savedPosters.length; i++){
-      if (savedPosters.length && savedPosters[i].imageURL === savedPosterInstance.imageURL && savedPosters[i].title === savedPosterInstance.title && savedPosters[i].quote === savedPosterInstance.quote){
+      if (savedPosters[i].imageURL === savedPosterInstance.imageURL && savedPosters[i].title === savedPosterInstance.title && savedPosters[i].quote === savedPosterInstance.quote){
         posterExists++;
       };
     };
 };
 
-function makeMiniPoster (){ 
+function makeMiniPoster (){
   if (posterExists === 0) {
    savedPosters.push(savedPosterInstance);
 
@@ -216,7 +220,7 @@ function makeMiniPoster (){
         <h4>${savedPosterInstance.quote}</h4>
         </article>`
         savedPostersGrid.appendChild(createArticle);
-  };
+    };
 };
 
 getRandomLoad();
