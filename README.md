@@ -16,8 +16,17 @@ Turing can be quite challenging and stressful, but you can, and you must, Hang I
 
 * Save a poster
 * Show all saved posters
+
+![SaveAndShow](https://user-images.githubusercontent.com/87993138/161433011-3ff7ff85-1bc2-4807-89cd-a4fa6a45bb4a.gif)
+
 * Randomly generate new poster 
+
+![Show-Random-Poster](https://user-images.githubusercontent.com/87993138/161432732-595640cf-59c1-45d8-acb3-4c8f285b5734.gif)
+
 * Make your own poster
+
+![Make-own-Poster](https://user-images.githubusercontent.com/87993138/161432748-7a3d5380-80ca-48d1-be7a-2f82cfad934a.gif)
+
 
 ## Set Up
 
@@ -33,7 +42,8 @@ Project spec & rubric can be found [here](https://frontend.turing.io/projects/mo
 
 ## Contributors 
 
-* [Masaki Kleinkopf](https://github.com/masaki-kleinkopf/ "Masaki Kleinkopf")
+* [Masaki Kleinkopf](https://github.com/masaki-kl![Uploading Make-own-Poster.gif…]()
+einkopf/ "Masaki Kleinkopf")
 
 
 * [Brandon Ainsworth](https://github.com/BrandonAinsworth/ "Brandon Ainsworth")
