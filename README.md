@@ -42,8 +42,7 @@ Project spec & rubric can be found [here](https://frontend.turing.io/projects/mo
 
 ## Contributors 
 
-* [Masaki Kleinkopf](https://github.com/masaki-kl![Uploading Make-own-Poster.gif…]()
-einkopf/ "Masaki Kleinkopf")
+* [Masaki Kleinkopf](https://github.com/masaki-kleinkopf/ "Masaki Kleinkopf")
 
 
 * [Brandon Ainsworth](https://github.com/BrandonAinsworth/ "Brandon Ainsworth")
